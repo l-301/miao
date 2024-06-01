@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aa>p{
+            width: 600px;
+            color: white;
+            margin: auto;
+        }
+        .aa{
+            box-shadow: inset 10000px 10000px black;
+        }
+        .bb>p{
+            width: 600px;
+            margin: auto;
+            padding: 20px 0;
+        }
+        .cc div{
+            border: 2px solid black;
+            box-sizing: border-box;
+            width: 180px;
+            height: 40px;
+            margin: 15px 0 ;
+            box-shadow: inset 10000px 10000px pink;
+        }
+        .cc div:hover{
+            box-shadow: inset 10000px 10000px red;
+        }
+        .cc div:nth-child(n+5){
+            margin-left: 210px;
+            xmargin-top: -220px;
+            overflow: hidden;
+        }
+        .cc div:nth-child(n+9){
+            margin-left: 420px;
+        }
+        .cc div:nth-child(5){
+            margin-top: -220px;
+        }
+        .cc div:nth-child(9){
+            margin-top: -220px;
+        }
+        .cc div:first-child{
+            margin-top:-7px;
+        }
+        .cc{
+            margin: auto;
+            width: 600px;
+        }
+        .one{
+            margin: 7px 10px;
+        }
+        .two{
+            margin: 7px auto;
+            width: 105px;
+        }
+        .abc{
+            width: 40px;
+            margin: auto;
+            margin-top: 7px;
+        }
+        
+        .dd div{
+            xtext-decoration: underline dotted;
+            border-bottom: 1px dotted black;
+            width: 600px;
+            margin: auto;
+        }
+        .dd div:nth-child(5){
+            border-bottom: 0px dotted black;
+        }
+
+        .ee p:first-child{
+            width: 80px;
+            margin: auto;
+        }
+        .ee p:nth-child(2){
+            width: 192px;
+            margin: auto;
+        }
+        .ee{
+            box-shadow: inset 10000px 10000px #ee8aee;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="aa">
+        <p>hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果hello world 请调整浏览器窗口大小查看效果</p>
+    </div>
+    <div class="bb">
+        <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+    </div>
+    <div class="cc">
+        <div><p class="one">宽180高40(包含边框)</p></div>
+        <div><p class="two">水平间隙30px</p></div>
+        <div><p class="two">垂直间隙15px</p></div>
+        <div><p class="two">边框宽度3px</p></div>
+        <div><p class="abc">产品</p></div>
+        <div><p class="abc">产品</p></div>
+        <div><p class="abc">产品</p></div>
+        <div><p class="abc">产品</p></div>
+        <div><p class="abc">产品</p></div>
+        <div><p class="abc">产品</p></div>
+        <div><p class="abc">产品</p></div>
+        <div><p class="abc">产品</p></div>   
+    </div>
+    <div class="dd">
+        <div>link</div>
+        <div>link</div>
+        <div>link</div>
+        <div>link</div>
+        <div>link</div>
+    </div>
+    <div class="ee">
+        <p>©版权所有</p>
+        <p>本页所有布局均使用块元素</p>
+    </div>
+</body>
+</html>
