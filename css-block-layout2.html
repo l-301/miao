@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span :not(:first-child){
+            border: 3px solid black;
+            box-shadow: inset 100px 100px pink;
+            margin: 0 15px;
+            padding: 6.5px 74px;
+        }
+        .a :first-child{
+            border: 3px solid black;
+            box-shadow: inset 100px 100px pink;
+            margin: 0 15px;
+            padding: 6.5px 13px;
+        }
+        .b :first-child{
+            border: 3px solid black;
+            box-shadow: inset 100px 100px pink;
+            margin: 0 15px;
+            padding: 6.5px 40px;
+        }
+        .c :first-child{
+            border: 3px solid black;
+            box-shadow: inset 100px 100px pink;
+            margin: 0 15px;
+            padding: 6.5px 44.5px
+        }
+
+        .kuan{
+            height: 34px;
+        }
+        body :first-child{
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span class="a">
+        <span>宽180高40(包含边框)</span>
+        <span>产品</span>
+        <span>产品</span>
+    </span>
+    <div></div>
+    <div class="kuan"></div>
+    <span class="b">
+        <span>水平间隙30px</span>
+        <span>产品</span>
+        <span>产品</span>
+    </span>
+    <div></div>
+    <div class="kuan"></div>
+    <span class="b">
+        <span>垂直间隙15px</span>
+        <span>产品</span>
+        <span>产品</span>
+    </span>
+    <div></div>
+    <div class="kuan"></div>
+    <span class="c">
+        <span>边框宽度3px</span>
+        <span>产品</span>
+        <span>产品</span>
+    </span>
+</body>
+</html>
