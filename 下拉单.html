@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .xuan{
+            font-size: 0;
+        }
+        .xuan div{
+            border: 2px solid black;
+            width: 80px;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .a{
+            position: absolute;
+        }
+        .b{
+            position: absolute;
+            left: 90px;
+        }
+        .c{
+            position: absolute;
+            left: 172px;
+        }
+        .xuan>*>ul{
+            position: absolute;
+            border: 1px solid black;
+            top: 6px;
+            left: -2px;
+            display: none;
+            width: auto;
+            xbackground-color: pink;
+            padding: 0;
+        }
+        .a:hover>ul{
+            display: block;
+            xbackground-color: red;
+        }
+        .b:hover>ul{
+            display: block;
+            xbackground-color: red;
+        }
+        .c:hover>ul{
+            display: block;
+            xbackground-color: red;
+        }
+        ul li{
+            list-style: none;
+            position: relative;
+            xtext-align: left;
+            xbackground-color: pink;
+            right: 0px;
+            width: 70px;
+
+        }
+        ul li ul{
+            position: absolute;
+            left: 70px;
+            xbackground-color: pink;
+            top: -1px;
+            border: 1px solid black;
+            display: none;
+            padding: 0;
+        }
+        .xuan *>ul>li:hover>ul{
+            display: block;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="xuan">
+    <div class="a">文件
+        <ul>
+            <li>aaa
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>bbb
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>ccc
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>ddd
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>eee
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="b">编辑
+        <ul>
+            <li>aaa
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>bbb
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>ccc
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>ddd
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>eee
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="c">选择
+        <ul>
+            <li>aaa
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>bbb
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>ccc
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>ddd
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+            <li>eee
+                <ul>
+                    <li>111</li>
+                    <li>222</li>
+                    <li>333</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            background-image: url(https://i0.hdslb.com/bfs/banner/e522fd037b695765284b42ff471c12cf3b3293c7.jpg@976w_550h_1c_!web-home-carousel-cover);
+            background-size: 400px 300px;
+            height: 300px;
+            width: 400px;
+            position: absolute;
+            display: none;
+        }
+        form input:checked+.a{
+            display: block;
+        }
+        .b{
+            background-image: url(https://i0.hdslb.com/bfs/banner/a337d4a67bc76e23027bb2219357754e58cb40e0.png@976w_550h_1c_!web-home-carousel-cover);
+            background-size: 400px 300px;
+            height: 300px;
+            width: 400px;
+            position: absolute;
+            display: none;
+        }
+        form input:checked+.b{
+            display: block;
+        }
+        
+        .c{
+            background-image: url(https://i0.hdslb.com/bfs/banner/c1eb147a92ffd112a89d9aaff3a20b0a28a55259.png@976w_550h_1c_!web-home-carousel-cover);
+            background-size: 400px 300px;
+            height: 300px;
+            width: 400px;
+            position: absolute;
+            display: none;
+        }
+        form input:checked+.c{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="radio" name="aa">
+        <div class="a"></div>
+        <input type="radio" name="aa">
+        <div class="b"></div>
+        <input type="radio" name="aa">
+        <div class="c"></div>
+    </form>
+    
+</body>
+</html>
