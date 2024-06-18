@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+        }
+        .wai{
+            width: 100%;
+            background-color: #333;
+            height: 40px;
+            position: absolute;
+            z-index: -1;
+        }
+        .all{
+            width: 1226px;
+            margin: auto;
+        }
+        .head{
+            xdisplay: flex;
+            width: 100%;
+            background-color: #333;
+            height: 40px;
+            font-size: 0;
+            
+            .a{
+                color: #424242;
+                xopacity: 10%;
+                font-size: 16px;
+            }
+            
+            a{
+                text-decoration: none;
+                color: #b0b0b0;
+                opacity: 1;
+                margin: 5px;
+                font-size: 12px;
+                line-height: 40px;
+                &:hover{
+                    color: white;
+                }
+            }
+            .a1{
+                margin-right: 80px;
+                xcolor: red;
+            }
+            .a2{
+                margin-left: 116px;
+                color: red;
+            }
+            div{
+                xwidth: 1240px;
+                xmargin: auto;
+            }
+            >div>span:nth-last-child(2){
+                margin-right: 20px;
+            
+            }
+            >div>span:last-child{
+                display: float;
+                float: right;
+                width: 120px;
+                background-color: #424242;
+                margin-right: 0;
+                margin-left: auto;
+                div{
+                    width: 316px;
+                    height: 100px;
+                    position: absolute;
+                    background-color: rgb(255, 255, 255);
+                    right: 98px;
+                    font-size: 16px;
+                    box-shadow: 0px 0px 10px -5px black;
+                    display: none;
+                }
+                &:hover{
+                    background-color: white;
+                    a{
+                        color: #ff6700;
+                    }
+                    div{
+                        display: block;
+                    }
+                }
+                a{
+                    display: block;
+                    width: 60px;
+                    margin: auto;
+                }
+                span{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 12px;
+                    height: 100%;
+                }
+
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wai"></div>
+    <div class="all">
+        <div class="head">
+            <div>
+            <span><a href="">小米官网</a></span><span class="a">|</span>
+            <span><a href="">小米商城</a></span><span class="a">|</span>
+            <span><a href="">小米澎湃OS</a></span><span class="a">|</span>
+            <span><a href="">小米汽车</a></span><span class="a">|</span>
+            <span><a href="">云服务</a></span><span class="a">|</span>
+            <span><a href="">loT</a></span><span class="a">|</span>
+            <span><a href="">有品</a></span><span class="a">|</span>
+            <span><a href="">小爱开放平台</a></span><span class="a">|</span>
+            <span><a href="">资质证照</a></span><span class="a">|</span>
+            <span><a href="">协议规则</a></span><span class="a">|</span>
+            <span><a href="">下载app</a></span><span class="a">|</span>
+            <span class="a1"><a href="">Select Location</a></span>
+            <span class="a2"><a href="">登录</a></span><span class="a">|</span>
+            <span><a href="">注册</a></span><span class="a">|</span>
+            <span><a href="">消息通知</a></span>
+            <span>
+                <a href="">购物车(0)</a>
+                <div>
+                    <span>购物车中还没有商品，赶紧选购吧！</span>
+                </div>
+            </span>
+            </div>
+        </div>
+
+        <div class="w-full xbg-indigo-500 h-[100px] xflex xjustify-center xitems-center">
+            <div class="w-[234px] h-full xbg-indigo-500 inline-block align-middle">
+                <div class="flex items-center h-full">
+                <a href="" class="size-[56px] block xmt-[20px]">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png" alt="" class="size-[56px]">
+                </a>
+                </div>
+            </div><!-- 
+         --><div class="w-[992px] h-full inline-block align-top">
+                <div class="flex items-center h-full">
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">Xiaomi手机</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">Redmi手机</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">电视</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">笔记本</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">平板</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">家电</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">路由器</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">服务中心</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">社区</a></span>
+                    <form action="" class="relative left-[62px] mr-0 ml-full">
+                        <input type="text" class="w-[245px] h-[50px] border-[1px] border-inherit group hover:border-black" ><!-- 
+                     --><button class="w-[52px] h-[50px] border-[1px] border-inherit border-l-0">shez</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="h-[670px] w-full">
+            <div class="h-[460px] w-[1226px] bg-indigo-500 xrow-span-3 xcol-span-4 flex flex-col">
+                <div class="w-[234px] h-full bg-[#99999b] flex flex-col justify-center">
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">手机<span>123</span></span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">电视</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">家电</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">笔记本 平板</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">出行 穿戴</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">耳机 音箱</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">健康 儿童</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">生活 箱包</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">智能 路由器</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">电源 配件</span>
+                </div>
+                <div></div>
+            </div>
+            <div class="flex gap-[14px] mt-[14px]">
+                <div class="bg-indigo-300 h-[170px] w-[234px]"></div>
+                <div class="bg-indigo-300 h-[170px] w-[316px]"></div>
+                <div class="bg-indigo-300 h-[170px] w-[316px]"></div>
+                <div class="bg-indigo-300 h-[170px] w-[316px]"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="h-[5194px] w-full bg-[#f5f5f5]">
+        <div class="w-[1226px] h-full m-auto overflow-hidden">
+            <div class="w-full h-[144px] mt-[26px]">
+                <div class="w-full h-[120px] bg-indigo-300">
+                </div>
+            </div>
+
+
+            <div class="w-full h-[694px] xbg-indigo-500 xoverflow-hidden">
+                <div class="h-[58px] w-full xmt-[22px]">
+                    <span class="text-[22px] leading-[58px]">手机</span>
+                    <a class="float-right leading-[58px] hover:text-[#ff6700]" href="">查看更多</a>
+                </div>
+                <div class="grid grid-rows-2 grid-cols-5 w-full h-[614px] gap-[14px] ">
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 "></div>
+                    <div class="bg-indigo-300 "></div>
+                    <div class="bg-indigo-300 "></div>
+                    <div class="bg-indigo-300 "></div>
+                    <div class="bg-indigo-300 "></div>
+                    <div class="bg-indigo-300 "></div>
+                    <div class="bg-indigo-300 "></div>
+                    <div class="bg-indigo-300 "></div>
+                </div>
+            </div>
+
+            <div class="w-full h-[694px]">
+                <div class="h-[58px] w-full">
+                    <span class="text-[22px] leading-[58px]">智能穿戴</span>
+                    <div class="inline-block h-[42px] w-[124px] float-right pt-[16px]">
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">穿戴</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">耳机</a>
+                    </div>
+                </div>
+
+                <div class="flex w-full h-[614px] flex-col flex-wrap gap-[14px]">
+                    <div class="w-[234px] h-[614px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[143px] bg-indigo-300"></div>
+                    <div class="w-[234px] h-[143px] bg-indigo-300"></div>
+                </div>
+            </div>
+
+            <div class="w-full h-[694px]">
+                <div class="h-[58px] w-full">
+                    <span class="text-[22px] leading-[58px]">笔记本 | 平板</span>
+                    <div class="w-[62px] h-[42px] pt-[16px] inline-block float-right">
+                        <a class="float-right hover:text-[#ff6700]" href="">热门</a>
+                    </div>
+                </div>
+
+                <div class="h-[614px] w-full">
+                    <div class="h-[614px] w-[234px] float-left bg-indigo-300 mr-[14px]"></div>
+                    <div class="h-[300px] w-[234px] float-left bg-indigo-300 mr-[14px] mb-[14px]"></div>
+                    <div class="h-[300px] w-[234px] float-left bg-indigo-300 mr-[14px] mb-[14px]"></div>
+                    <div class="h-[300px] w-[234px] float-left bg-indigo-300 mr-[14px] mb-[14px]"></div>
+                    <div class="h-[300px] w-[234px] float-left bg-indigo-300 mb-[14px]"></div>
+                    <div class="h-[300px] w-[234px] float-left bg-indigo-300 mr-[14px]"></div>
+                    <div class="h-[300px] w-[234px] float-left bg-indigo-300 mr-[14px]"></div>
+                    <div class="h-[300px] w-[234px] float-left bg-indigo-300 mr-[14px]"></div>
+                    <div class="h-[143px] w-[234px] float-left bg-indigo-300 mb-[14px]"></div>
+                    <div class="h-[143px] w-[234px] float-left bg-indigo-300"></div>
+
+                </div>
+            </div>
+
+            <div class="w-full h-[694px]">
+                <div class="h-[58px] w-full">
+                    <span class="text-[22px] leading-[58px]">家电</span>
+                    <div class="inline-block h-[42px] w-[218px] float-right pt-[16px]">
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">空调</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">电视影音</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">热门</a>
+                    </div>
+                </div>
+                <div class="h-[614px] w-full text-[0px]">
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mb-[14px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mb-[14px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mb-[14px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mb-[14px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mb-[14px] overflow-hidden"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] bg-indigo-300 text-[16px] mr-[14px]"></div>
+                    <div class="inline-block h-[300px] w-[234px] xbg-indigo-300 text-[0px] ">
+                        <div class="inline-block h-[143px] w-[234px] mb-[14px] overflow-hidden bg-indigo-300 text-[16px]"></div>
+                        <div class="inline-block h-[143px] w-[234px] overflow-hidden bg-indigo-300 text-[16px]"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-[694px]">
+                <div class="h-[58px] w-full">
+                    <span class="text-[22px] leading-[58px]">生活电器</span>
+                    <div class="inline-block h-[42px] w-[264px] float-right pt-[16px]">
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">清洁</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">空净</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">扫地机</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">风扇</a>
+                    </div>
+                </div>
+                <div class="h-[614px] w-full grid grid-rows-4 grid-cols-5 gap-[14px]">
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300"></div>
+                    <div class="bg-indigo-300"></div>
+                </div>
+            </div>
+
+            <div class="w-full h-[694px]">
+                <div class="h-[58px] w-full">
+                    <span class="text-[22px] leading-[58px]">厨房电器</span>
+                    <div class="inline-block h-[42px] w-[296px] float-right pt-[16px]">
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">微蒸烤</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">电饭煲</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">烟灶</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">净水器</a>
+                    </div>
+                </div>
+                <div class="h-[614px] w-full grid grid-rows-4 grid-cols-5 gap-[14px]">
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300"></div>
+                    <div class="bg-indigo-300"></div>
+                </div>
+            </div>
+
+            <div class="w-full h-[694px]">
+                <div class="h-[58px] w-full">
+                    <span class="text-[22px] leading-[58px]">智能家居</span>
+                    <div class="inline-block h-[42px] w-[360px] float-right pt-[16px]">
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">智能设备</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">路由器</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">门锁门铃</a>
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">小爱音箱</a>
+                    </div>
+                </div>
+                <div class="h-[614px] w-full grid grid-rows-4 grid-cols-5 gap-[14px]">
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300 row-span-2"></div>
+                    <div class="bg-indigo-300"></div>
+                    <div class="bg-indigo-300"></div>
+                </div>
+            </div>
+
+
+
+                <div class="w-full h-[120px] bg-indigo-300 mt-[16px]"></div>
+
+        </div>
+
+    </div>
+
+    <div class="w-full h-[472px]">
+        <div class="w-[1226px] h-full m-auto">
+            <div class="w-full h-[80px] flex">
+                <div class="w-[20%] h-full border-b xpy-[27px] flex justify-center items-center">预约维修服务</div>
+                <div class="w-[20%] h-full border-b xpy-[27px] flex justify-center items-center">7天无理由退货</div>
+                <div class="w-[20%] h-full border-b xpy-[27px] flex justify-center items-center">15天免费换货</div>
+                <div class="w-[20%] h-full border-b xpy-[27px] flex justify-center items-center">满69包邮</div>
+                <div class="w-[20%] h-full border-b xpy-[27px] flex justify-center items-center">1100余家售后网点</div>
+            </div>
+
+            <div class="w-full h-[392px] py-[40px] xbg-indigo-300">
+                <div class="h-[208px] w-[251px] float-right bg-indigo-300"></div>
+                <div class="float-right w-[160px] mr-[15px]">
+                    <a class="block mb-[26px] text-[14px] hover:text-[#ff6700] xtext-[#757575]" href="">关注我们</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">新浪微博</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">官方微信</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">联系我们</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">公益基金会</a>
+                </div>
+                <div class="float-right w-[160px]">
+                    <a class="block mb-[26px] text-[14px] hover:text-[#ff6700] xtext-[#757575]" href="">关于小米</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">了解小米</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">加入小米</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">投资者关系</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">可持续发展</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">廉洁举报</a>
+                </div>
+                <div class="float-right w-[160px]">
+                    <a class="block mb-[26px] text-[14px] hover:text-[#ff6700] xtext-[#757575]" href="">线下门店</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">小米之家</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">服务网点</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">授权体验店/专区</a>
+                </div>
+                <div class="float-right w-[160px]">
+                    <a class="block mb-[26px] text-[14px] hover:text-[#ff6700] xtext-[#757575]" href="">服务中心</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">申请售后</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">售后政策</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">维修服务价格</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">订单查询</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">以旧换新</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">保障服务</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">防伪查询</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">F码通道</a>
+                </div>
+                <div class="float-right w-[160px]">
+                    <a class="block mb-[26px] text-[14px] hover:text-[#ff6700] xtext-[#757575]" href="">选购指南</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">手机</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">电视</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">笔记本</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">平板</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">穿戴</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">耳机</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">家电</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">路由器</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">音箱</a>
+                    <a class="block mt-[10px] text-[12px] hover:text-[#ff6700] text-[#757575]" href="">配件</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full h-[266px] bg-[#fafafa] py-[30px]">
+        <div class="h-full w-[1226px] m-auto">
+            <div class="w-full h-[110px] pl-[77px] text-[0px] bg-[url('https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png')] bg-[length:56px_56px] bg-clip-padding bg-no-repeat">
+                <div class="w-full h-[19px] text-[12px] xbg-indigo-300 ">
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">小米商城</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">小米澎湃OS</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">米家</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">米聊</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">多看</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">游戏</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">音乐</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">政企服务</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">小米天猫店</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">小米集团隐私政策</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">小米公司儿童信息保护规则</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">小米商城隐私政策</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">小米商城用户协议</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">问题反馈</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">Select Location</a>
+                    
+                </div>
+                <div class="w-full h-[19px] text-[12px] xbg-indigo-300 ">
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">北京互联网法院法律服务工作站</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">中国消费者协会</a> | 
+                    <a class="text-[12px] hover:text-[#ff6700]" href="">北京市消费者协会</a>
+                </div>
+                <div class="inline-block w-full h-[72px] text-[12px] text-[#B0B0B0] whitespace-pre">© <a class="hover:text-[#ff6700]" href="">mi.com</a> 京ICP证110507号 <a class="hover:text-[#ff6700]" href="">京ICP备10046444号</a> <a class="hover:text-[#ff6700]" href="">京公网安备11010802020134号</a> <a class="hover:text-[#ff6700]" href="">京网文[2023]0169-004号</a>
+<a class="hover:text-[#ff6700]" href="">（京）网械平台备字（2018）第00005号</a> <a class="hover:text-[#ff6700]" href="">互联网药品信息服务资格证(京)-非经营性-2014-0090</a> <a class="hover:text-[#ff6700]" href="">营业执照</a> <a class="hover:text-[#ff6700]" href="">医疗器械质量公告</a>
+<a class="hover:text-[#ff6700]" href="">增值电信业务经营许可证编号：京B2-20180851</a> 网络食品经营备案 京食药网食备202010048   <a class="hover:text-[#ff6700]" href="">食品经营许可证</a> 新出发京批字第直220280号
+违法和不良信息举报电话：171-5104-4404 <a class="hover:text-[#ff6700]" href="">知识产权侵权投诉</a> 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+                </div>
+            </div>
+            <div class="h-[28px] w-full mt-[4px] pl-[77px] mb-[15px] ">
+                <div class="w-[85px] h-[28px] bg-indigo-300 inline-block"></div>
+                <div class="w-[92px] h-[28px] bg-indigo-300 inline-block ml-[5px]"></div>
+                <div class="w-[85px] h-[28px] bg-indigo-300 inline-block ml-[5px]"></div>
+                <div class="w-[74px] h-[28px] bg-indigo-300 inline-block ml-[5px]"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
