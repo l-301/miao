@@ -73,10 +73,11 @@
                     height: 100px;
                     position: absolute;
                     background-color: rgb(255, 255, 255);
-                    right: 98px;
+                    right: 0px;
                     font-size: 16px;
                     box-shadow: 0px 0px 10px -5px black;
                     display: none;
+                    z-index: 1;
                 }
                 &:hover{
                     background-color: white;
@@ -126,7 +127,7 @@
             <span class="a2"><a href="">登录</a></span><span class="a">|</span>
             <span><a href="">注册</a></span><span class="a">|</span>
             <span><a href="">消息通知</a></span>
-            <span>
+            <span class="relative">
                 <a href="">购物车(0)</a>
                 <div>
                     <span>购物车中还没有商品，赶紧选购吧！</span>
@@ -136,7 +137,7 @@
         </div>
 
         <div class="w-full xbg-indigo-500 h-[100px] xflex xjustify-center xitems-center">
-            <div class="w-[234px] h-full xbg-indigo-500 inline-block align-middle">
+            <div class="图标行 w-[234px] h-full xbg-indigo-500 inline-block align-middle">
                 <div class="flex items-center h-full">
                 <a href="" class="size-[56px] block xmt-[20px]">
                     <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png" alt="" class="size-[56px]">
@@ -145,7 +146,10 @@
             </div><!-- 
          --><div class="w-[992px] h-full inline-block align-top">
                 <div class="flex items-center h-full">
-                    <span class="mx-[10px] hover:text-[#ff6700]"><a href="">Xiaomi手机</a></span>
+                    <span class="mx-[10px] hover:text-[#ff6700] relative"><a href="">Xiaomi手机</a>
+                    <div class="h-[230px] w-full bg-indigo-300 absolute top-[62px] hidden">
+                    </div>
+                    </span>
                     <span class="mx-[10px] hover:text-[#ff6700]"><a href="">Redmi手机</a></span>
                     <span class="mx-[10px] hover:text-[#ff6700]"><a href="">电视</a></span>
                     <span class="mx-[10px] hover:text-[#ff6700]"><a href="">笔记本</a></span>
@@ -154,27 +158,66 @@
                     <span class="mx-[10px] hover:text-[#ff6700]"><a href="">路由器</a></span>
                     <span class="mx-[10px] hover:text-[#ff6700]"><a href="">服务中心</a></span>
                     <span class="mx-[10px] hover:text-[#ff6700]"><a href="">社区</a></span>
-                    <form action="" class="relative left-[62px] mr-0 ml-full">
-                        <input type="text" class="w-[245px] h-[50px] border-[1px] border-inherit group hover:border-black" ><!-- 
-                     --><button class="w-[52px] h-[50px] border-[1px] border-inherit border-l-0">shez</button>
+                    <form action="" class="search relative left-[62px] mr-0 ml-full">
+                        <input type="text" class="w-[245px] h-[50px] border-[1px] border-inherit peer peer-hover:border-black hover:border-black" ><!-- 
+                     --><button class="w-[52px] h-[50px] border-[1px] border-inherit border-l-0 peer peer-hover:border-black hover:bg-[#ff6700]">0</button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <div class="h-[670px] w-full">
+        <div class="滚动图 h-[670px] w-full">
             <div class="h-[460px] w-[1226px] bg-indigo-500 xrow-span-3 xcol-span-4 flex flex-col">
                 <div class="w-[234px] h-full bg-[#99999b] flex flex-col justify-center">
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">手机<span>123</span></span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">电视</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">家电</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">笔记本 平板</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">出行 穿戴</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">耳机 音箱</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">健康 儿童</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">生活 箱包</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">智能 路由器</span>
-                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center">电源 配件</span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">手机
+                        <div class="h-[460px] w-[531px] bg-indigo-300 absolute left-[234px] top-[-20px] group-hover:block hidden">
+                        </div>
+                    </span>
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">电视
+                        <div class="h-[460px] w-[531px] bg-indigo-300 absolute left-[234px] top-[-62px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">家电
+                        <div class="h-[460px] w-[993px] bg-indigo-300 absolute left-[234px] top-[-104px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">笔记本 平板
+                        <div class="h-[460px] w-[531px] bg-indigo-300 absolute left-[234px] top-[-146px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">出行 穿戴
+                        <div class="h-[460px] w-[993px] bg-indigo-300 absolute left-[234px] top-[-188px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">耳机 音箱
+                        <div class="h-[460px] w-[993px] bg-indigo-300 absolute left-[234px] bottom-[-188px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">健康 儿童
+                        <div class="h-[460px] w-[796px] bg-indigo-300 absolute left-[234px] bottom-[-146px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">生活 箱包
+                        <div class="h-[460px] w-[796px] bg-indigo-300 absolute left-[234px] bottom-[-104px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">智能 路由器
+                        <div class="h-[460px] w-[531px] bg-indigo-300 absolute left-[234px] bottom-[-62px] group-hover:block hidden">
+                        </div>
+                    </span>
+
+                    <span class="h-[42px] hover:bg-[#ff6700] flex justify-around items-center relative group">电源 配件
+                        <div class="h-[460px] w-[531px] bg-indigo-300 absolute left-[234px] bottom-[-20px] group-hover:block hidden">
+                        </div>
+                    </span>
+
                 </div>
                 <div></div>
             </div>
@@ -216,24 +259,39 @@
             <div class="w-full h-[694px]">
                 <div class="h-[58px] w-full">
                     <span class="text-[22px] leading-[58px]">智能穿戴</span>
-                    <div class="inline-block h-[42px] w-[124px] float-right pt-[16px]">
-                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">穿戴</a>
-                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px]" href="">耳机</a>
+                    <div class="inline-block h-[42px] w-[124px] float-right pt-[16px] relative">
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px] peer" href="">穿戴</a>
+                        <div class="flex w-full h-[614px] flex-col flex-wrap gap-[14px] absolute xleft-[100px] right-[1102px] top-[58px] peer-hover:flex peer-hover:z-[1] hidden ">
+                            <div class="w-[234px] h-[614px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[143px] bg-indigo-500"></div>
+                            <div class="w-[234px] h-[143px] bg-indigo-500"></div>
+                        </div>
+                        
+                        <a class="float-right ml-[30px] my[26px] hover:text-[#ff6700] xunderline xleading-[26px] relative" href="">耳机</a>
+                        <div class="flex w-full h-[614px] flex-col flex-wrap gap-[14px] absolute right-[1102px] top-[58px] xhidden">
+                            <div class="w-[234px] h-[614px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[300px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[143px] bg-indigo-300"></div>
+                            <div class="w-[234px] h-[143px] bg-indigo-300"></div>
+                        </div>
+                        
                     </div>
                 </div>
 
-                <div class="flex w-full h-[614px] flex-col flex-wrap gap-[14px]">
-                    <div class="w-[234px] h-[614px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[300px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[143px] bg-indigo-300"></div>
-                    <div class="w-[234px] h-[143px] bg-indigo-300"></div>
-                </div>
+                
             </div>
 
             <div class="w-full h-[694px]">
