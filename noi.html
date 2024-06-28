@@ -432,3 +432,842 @@ var d =Math.ceil(c/b)
 console.log(a-d)
 </script>
 
+<script type="ok" id="ch0105/01">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    x = x+1
+    y = y+b
+}
+var c =y/a
+console.log(c.toFixed(2))
+
+</script>
+
+<script type="ok" id="ch0105/02">
+var x = 0
+var y = 0
+
+while(x<12){
+    var b = Number(prompt("输入值2"))
+    x = x+1
+    y = y+b
+}
+var c =y/12
+console.log("$"+c.toFixed(2))
+</script>
+
+<script type="ok" id="ch0105/03">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    x = x+1
+    y = y+b
+}
+var c =y/a
+console.log(c.toFixed(4))
+</script>
+
+<script type="ok" id="ch0105/04">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    x = x+1
+    y = y+b
+}
+var c =y/a
+console.log(y)
+console.log(c.toFixed(5))
+</script>
+
+<script type="ok" id="ch0105/05">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    if(y<b){
+        y = b
+    }
+    x = x+1
+}
+console.log(y)
+</script>
+
+<script type="ok" id="ch0105/06">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+var y2 = 9999
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    if(y<b){
+        y = b
+    }
+    if(y2>b){
+        y2 = b
+    }
+    x = x+1
+}
+console.log(y-y2)
+</script>
+
+<script type="ok" id="ch0105/07">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+var c1 = 0
+var c2 = 0
+var c3 = 0
+
+while(x<a){
+    var b1 = Number(prompt("输入值b1"))
+    var b2 = Number(prompt("输入值b2"))
+    var b3 = Number(prompt("输入值b3"))
+    x = x+1
+    c1 = c1+b1
+    c2 = c2+b2
+    c3 = c3+b3
+}
+y = c1+c2+c3
+console.log(c1)
+console.log(c2)
+console.log(c3)
+console.log(y)
+</script>
+
+<script type="ok" id="ch0105/08">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+
+while(x<a-1){
+    var b = Number(prompt("输入值2"))
+    x = x+1
+    y = y+b
+}
+var c =((a-2)*180)-y
+console.log(c)
+</script>
+
+<script type="ok" id="ch0105/09">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var y = 0
+
+while(a<b+1){
+    if(a%2!=0){
+    y = y+a
+}
+    a = a+1 
+}
+console.log(y)
+</script>
+
+<script type="ok" id="ch0105/10">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var y = 0
+
+while(a<b+1){
+    if(a%17==0){
+    y = y+a
+}
+    a = a+1 
+}
+console.log(y)
+</script>
+
+<script type="ok" id="ch0105/11">
+var a = Number(prompt("输入值1"))
+var x = 0
+var c1 = 0
+var c2 = 0
+var c3 = 0
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    if(b==1){
+        c1=c1+1
+    }
+    if(b==5){
+        c2=c2+1
+    }
+    if(b==10){
+        c3=c3+1
+    }
+    x = x+1
+}
+console.log(c1)
+console.log(c2)
+console.log(c3)
+</script>
+
+<script type="ok" id="ch0105/12">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var x = 0
+var y = 0
+
+while(y<a){
+    var c = Number(prompt("输入值2"))
+    if(c==b){
+        x = x+1
+    }
+    y = y+1
+}
+console.log(x)
+</script>
+
+<script type="ok" id="ch0105/13">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+console.log(a**b)
+</script>
+
+<script type="ok" id="ch0105/14">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var c = 0 
+var x = 0
+while(x<b){
+    c = a*0.001
+    a = a+c
+    x = x+1
+}
+console.log(a.toFixed(4))
+</script>
+
+<script type="ok" id="ch0105/15">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var c = Number(prompt("输入值3"))
+var x = 0 
+var y = 0
+while(x<c){
+    y = 1+(a/100)
+    b = b*y
+    x = x+1
+}
+console.log(Math.trunc(b))
+</script>
+
+<script type="ok" id="ch0105/16">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var x = a 
+var y = 200
+var z = 1
+while(x<y || z>=20){
+    x = x+50
+    y = y*(1+(b/100))
+    z = z+1
+}
+if(z<20){
+    console.log(z)
+}else{
+    console.log("Impossible")
+}
+</script>
+
+<script type="ok" id="ch0105/17">
+var a = Number(prompt("输入值1"))
+var b1 = 1
+var b2 = 1
+var x = 2
+var y = 0
+
+while(x<a){
+    y = b1 + b2
+    b1 = b2
+    b2 = y
+    x = x+1
+}
+console.log(y)
+</script>
+
+<script type="ok" id="ch0105/18">
+    var a = Number(prompt("输入值1"))
+    var b1 = Number(prompt("输入值2"))
+    var b2 = Number(prompt("输入值3"))
+    var lx = b2/b1
+    var x = 1
+    
+    while(x<a){
+        var c1 = Number(prompt("输入值2"))
+        var c2 = Number(prompt("输入值3"))
+        var ly = c2/c1
+        if(ly-lx>0.05){
+            console.log("better")
+        }else if(lx-ly>0.05){
+            console.log("worse")
+        }else(
+            console.log("same")
+        )
+        x = x+1
+    }
+</script>
+
+<script type="ok" id="ch0105/19">
+var a = Number(prompt("输入值1"))
+var x = 0
+
+while(x<a){
+    var b1 = Number(prompt("输入值2"))
+    var b2 = Number(prompt("输入值2"))
+    var c = Number(prompt("输入值3"))
+    var b3 = ((0 - b1) **2 + (0 - b2) **2)**0.5
+    var y = ((b3*2)/50) + c*1 + c*0.5
+    x = x+1
+    console.log(Math.ceil(y))
+}
+</script>
+
+<script type="ok" id="ch0105/20">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = a
+
+while(x<10){
+    y = y+a
+    a = a/2 
+    x = x+1
+
+}
+var z1 = y-2*a
+var z2 = a
+console.log(z1.toFixed(4))
+console.log(z2.toFixed(7))
+</script>
+
+<script type="ok" id="ch0105/21">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+
+while(a!=1){
+    if(a%2==0){
+        var y = a
+        a = a/2
+        console.log(y + "/2=" + a)
+    }else{
+        var y = a
+        a = a*3+1
+        console.log(y + "*3+1=" + a)
+    }
+    
+}
+console.log("End")
+</script>
+
+<script type="ok" id="ch0105/22">
+var x = 0
+var b = 0
+var y = 0
+var jieguo = 99
+var sum = 0
+
+while(x<12){
+    var a = Number(prompt("输入值1"))
+    x = x+1
+    b = 300-a
+    y = y+b
+    while(y>=100){
+        y = y-100
+        sum = sum+100
+    }
+    if(y<0)(
+        jieguo = -x
+    )
+    xconsole.log(b + " " + y)
+}
+if(jieguo<0){
+    console.log(jieguo)
+}else{
+    console.log(sum*1.2+y)
+}
+
+</script>
+
+<script type="ok" id="ch0105/23">
+var b = Number(prompt("输入值1"))
+var a = Number(prompt("输入值2"))
+var x = 0
+var y = 0
+
+while(x<a){
+    var c = Number(prompt("输入值3"))
+    x = x+1
+    b = b-c
+    if(b<0){
+        y = y+1
+        b = b+c
+    }
+
+}
+console.log(y)
+</script>
+
+<script type="ok" id="ch0105/24">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+var z = 0
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    var c = Number(prompt("输入值3"))
+    x = x+1
+    if(b<=140&&b>=90 && c>=60&&c<=90){
+        y = y+1
+    }else{
+        y = 0
+    }
+    if(y>z){
+        z = y
+    }
+}
+console.log(z)
+</script>
+
+<script type="ok" id="ch0105/25">
+var a = 100
+var x1 = 1
+var x2 = 2 
+var ge = 0
+var bai = 0
+var shi = 0
+
+while(x1!=x2){
+    a = a+1
+    x1 = a.toString(7)
+    x2 = a.toString(9)
+    ge = x1%10
+    bai = (x1/100)-((x1/100)%1)
+    shi = (x1-(bai*100)-ge)/10
+    var b = ''+ ge + shi + bai
+    x1 = Number(b)
+}
+console.log(a)
+console.log(a.toString(7))
+console.log(a.toString(9))
+</script>
+
+<script type="ok" id="ch0105/26">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+var ge = 0
+var shi = 0
+var bai = 0
+var qian = 0
+
+while(x<a){
+    var b = Number(prompt("输入值2"))
+    x = x+1
+    qian = Math.floor(b/1000)
+    bai = Math.floor((b%1000)/100)
+    shi =Math.floor((b%100)/10)
+    ge = b%10
+    if(ge-shi-bai-qian>0){
+        y = y+1
+    }
+}
+console.log(y)
+</script>
+
+<script type="k" id="ch0105/27">
+var a = Number(prompt("输入值1"))
+console.log(a+1)
+</script>
+
+<script type="ok" id="ch0105/28">
+var a = Number(prompt("输入值1"))
+var a2 = a
+var x = 1
+var y = ""
+var b = 0
+var c = 1
+
+while(c!=b){
+    x = x*10
+    b = a%x
+    c = a % (x*10)
+    a = Math.floor((a%x)/(x/10))
+    y = y + " " + a
+    a = a2
+}
+console.log(y)
+</script>
+
+<script type="ok" id="ch0105/29">
+var a = Number(prompt("输入值1"))
+var a2 = a
+var x = 1
+var y = ""
+var b = 0
+var c = 1
+if(a<0){
+    a = -a
+    a2 = -a2
+    while(c!=b){
+    x = x*10
+    b = a%x
+    c = a % (x*10)
+    a = Math.floor((a%x)/(x/10))
+    y = y + "" + a
+    a = a2
+    }
+    console.log(-y)
+}else{
+    while(c!=b){
+    x = x*10
+    b = a%x
+    c = a % (x*10)
+    a = Math.floor((a%x)/(x/10))
+    y = y + "" + a
+    a = a2
+    }
+    console.log(+y)
+}
+
+
+</script>
+
+<script type="ok" id="ch0105/30">
+var a = Number(prompt("输入值1"))
+var a3 = Number(prompt("输入值2"))
+var a2 = a
+var x = 1
+var y = ""
+var b = 0
+var c = 1
+var end = 0
+var end2 = 0
+
+if(a%19==0){
+    end = end + 1
+}
+while(c!=b){
+    x = x*10
+    b = a%x
+    c = a % (x*10)
+    a = Math.floor((a%x)/(x/10))
+    if(a==3){
+        end2 = end2 + 1
+    }
+    a = a2
+}
+if(end==1 && end2>=a3){
+    console.log("YES")
+}else{
+    console.log("NO")
+}
+
+</script>
+
+<script type="x" id="ch0105/31">
+
+</script>
+
+<script type="ok" id="ch0105/32">
+var a = Number(prompt("输入值1"))
+var b = 1
+var b2 = 1
+var c = 2
+var x = 0
+var y = 0
+
+while(x<a){
+    y = y + c/b
+    b = c
+    c = b2 + c
+    b2 = b
+    x = x+1
+}
+console.log(y.toFixed(4))
+</script>
+
+<script type="ok" id="ch0105/33">
+var a = Number(prompt("输入值1"))
+var x = 1
+var y = 1/x
+
+while(x<a){
+    x = x+1
+    if(x%2==0){
+        y = y-1/x
+    }else{
+        y = y+1/x
+    }
+}
+console.log(y.toFixed(4))
+</script>
+
+<script type="ok" id="ch0105/34">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+var sum = 0
+var b = 1
+while(x<a){
+    x = x+1
+    while(y!=x){
+        y = y+1
+        b = b*y
+    }
+    y = 0
+    sum = sum + b
+    b = 1
+}
+console.log(sum)
+</script>
+
+<script type="x" id="ch0105/35">
+
+</script>
+
+<script type="ok" id="ch0105/36">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var x = 0
+var y = 0
+
+while(x<b){
+    x = x+1
+    y = y + a**x
+}
+console.log((y+1).toFixed(2))
+</script>
+
+<script type="ok" id="ch0105/37">
+var a = Number(prompt("输入值1"))
+var b = Number(prompt("输入值2"))
+var c = Number(prompt("输入值3"))
+var x = 0
+var y1 = 0
+var y2 = b
+var y3 = c
+var pk = 0
+//debugger
+
+while(y3!=0){
+    while(y1<a){    //回血
+        y1 = y1+y2
+        y3 = y3-1
+    }
+    y1 = a
+    yy = y2
+    while(y1!=0){
+        y1 = y1-1
+        pk = pk + 1
+        if(pk==yy){
+            y2 = y2+1
+            pk = 0
+        }
+    }
+    pk = 0
+}
+
+console.log(y2)
+  
+
+</script>
+
+<script type="" id="ch0105/38">
+
+</script>
+
+<script type="ok" id="ch0105/39">
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+var ge = 0
+var shi = 0
+var bai = 0
+sum = 0
+
+while(x<a){
+    x = x+1
+    if(x<10 && x%7!=0){
+        ge = x%10
+        if(ge!=7){
+            sum = sum + x*x
+        }
+    }else {
+        ge = x%10
+        shi = ((x%100)-ge)/10
+        if(x%7!= 0 && ge != 7 && shi!= 7){
+            sum = sum + x*x
+        }
+    }
+    
+}
+console.log(sum)
+</script>
+
+<script type="ok" id="ch0105/40">
+var a = Number(prompt("输入值1"))
+var a2 = 0
+var x = 1
+var b = 0
+var c = 1
+var x2 = 0
+var jieguo = 0
+//debugger
+while(x2<a){
+    x2 = x2+1
+    a2 = x2
+    while(c!=b){
+        x = x*10
+        b = x2 % x
+        c = x2 % (x*10)
+        x2 = Math.floor((x2%x)/(x/10))
+        if(x2==1){
+            jieguo = jieguo+1
+        }
+        x2 = a2
+    }
+    b = 0
+    c = 1
+    x = 1
+}
+console.log(jieguo)
+</script>
+
+<script type="ok" id="ch0105/41">
+var l = Number(prompt("输入值1"))
+var r = Number(prompt("输入值1"))
+var a2 = 0
+var x = 1
+var b = 0
+var c = 1
+var x2 = l-1
+var jieguo = 0
+//debugger
+while(x2<r){
+    x2 = x2+1
+    a2 = x2
+    while(c!=b){
+        x = x*10
+        b = x2 % x
+        c = x2 % (x*10)
+        x2 = Math.floor((x2%x)/(x/10))
+        if(x2==2){
+            jieguo = jieguo+1
+        }
+        x2 = a2
+    }
+    b = 0
+    c = 1
+    x = 1
+}
+console.log(jieguo)
+</script>
+
+<script type="ok" id="ch0105/42">
+var a1 = Number(prompt("输入值1"))
+var a2 = Number(prompt("输入值1"))
+var b = prompt("输入值2")
+var c = Number(prompt("输入值3"))
+var x = 0
+var x2 = 0
+var y = ""
+
+
+while(x2<a2){
+    while(x<a1){
+    y = y+b
+    x = x+1
+}
+y = y+"\n"
+x2 = x2 + 1
+x = 0
+if(c==0){
+    x = 0
+    x2 = x2+1
+    while(x2<a2){
+        y = y+b
+        x = x+2
+        while(x<a1){
+            y = y+" "
+            x = x + 1
+        }
+        y = y+b
+        y = y+"\n"
+        x2 = x2 + 1
+        x = 0
+    }
+    while(x<a1){
+            y = y+b
+            x = x + 1
+    }
+}
+}
+console.log(y)
+</script>
+
+<script type="" id="ch0105/43">
+
+</script>
+
+<script type="ok" id="ch0105/44">
+var a = Number(prompt("输入值1"))
+var x = 0
+var x2 = 0
+var y = 0
+var jieguo = 0
+//debugger
+while(y<a){
+    x2 = x2+1
+    x = x2
+    if( x==2 || x==3 || x==5 || x==7){
+        y = y+1
+    }
+    if(x!=1 && x%2!=0 && x%3!=0 && x%4!=0 && x%5!=0 && x%6!=0 && x%7!=0){
+         y = y+1
+         jieguo = x
+    }
+    
+   
+}
+console.log(jieguo)
+</script>
+
+<script type="ok" id="ch0105/45">
+//debugger
+var a = Number(prompt("输入值1"))
+var x = 0
+var y = 0
+var b1 = 1
+var b2 = 1
+var c = 1
+
+while(x<a){
+    y = y+b1
+    if(c!=b2){
+        c = c+1
+    }else {
+        b2 = b1+1
+        b1 = b2
+        c = 1
+    }
+    x = x+1
+}
+console.log(y)
+</script>
+
+
+
+
