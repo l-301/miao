@@ -60,18 +60,15 @@ class LinkedList{
         }
     }
 
-    get(idx){
+    at(idx){
         var a = this.head
         var count = 0
-        if(idx == 0){
-            return a.val
-        }
-        while(a.next){
-            count += 1
-            a = a.next
-            if(count == idx){
+        for(var i = 0; i < this._length; i++){
+            if(i == idx){
                 return a.val
             }
+            count += 1
+            a = a.next
         }
     }
 
@@ -84,6 +81,10 @@ class LinkedList{
 
     get size(){
         return this._length
+    }
+
+    at(val){
+
     }
 }
 

@@ -124,7 +124,7 @@
         // a.set('foo', 3)
     </script>
 
-    <script type="鏈錶">
+    <script type="">
         class LinkedList{
             constructor(){
                 this.head = null
@@ -171,6 +171,18 @@
 
             get size(){
                 return this._length
+            }
+
+            at(idx){
+                var a = this.head
+                var count = 0
+                for(var i = 0; i < this._length; i++){
+                    if(i == idx){
+                        return a.val
+                    }
+                    count += 1
+                    a = a.next
+                }
             }
         }
 
