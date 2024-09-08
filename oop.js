@@ -1,3 +1,25 @@
+class Vector{
+    constructor(x,y){
+        this.x = x
+        this.y = y
+    }
+
+    plus (v){
+        var x = this.x + v.x
+        var y = this.y + v.y
+        return new Vector(x,y)
+    }
+    minus (v){
+        var x = this.x - v.x
+        var y = this.y - v.y
+        return new Vector(x,y)
+    }
+    length (){            
+        return Math.sqrt(this.x * this.x,this.y * this.y)
+    }
+
+}
+
 class MyMap{
 
     constructor(){
@@ -60,15 +82,18 @@ class LinkedList{
         }
     }
 
-    at(idx){
+    get(idx){
         var a = this.head
         var count = 0
-        for(var i = 0; i < this._length; i++){
-            if(i == idx){
-                return a.val
-            }
+        if(idx == 0){
+            return a.val
+        }
+        while(a.next){
             count += 1
             a = a.next
+            if(count == idx){
+                return a.val
+            }
         }
     }
 
@@ -83,8 +108,16 @@ class LinkedList{
         return this._length
     }
 
-    at(val){
-
+    at(idx){
+        var a = this.head
+        var count = 0
+        for(var i = 0; i < this._length; i++){
+            if(i == idx){
+                return a.val
+            }
+            count += 1
+            a = a.next
+        }
     }
 }
 
