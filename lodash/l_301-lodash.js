@@ -1,7 +1,7 @@
 <script scr=''></script>
 
 
-var aaa = function(){
+var l_301 = function(){
     function compact(array) {       //去除数组中的null、0、""、undefined、 和NaN值
         var x = []
         for(var i = 0; i < array.length; i++){
@@ -262,11 +262,11 @@ var aaa = function(){
         fromPairs:fromPairs,            //数组转obj
         toPairs:toPairs,                //obj转数组
         head:head,                      //获取数组头部的值
-        indexOf:indexOf,
-        lastIndexOf:lastIndexOf,
-        initial:initial,
-        join:join,
-        last:last,
+        indexOf:indexOf,                //检索x最先出现的位置
+        lastIndexOf:lastIndexOf,        //从后往前检索x最先出现的位置
+        initial:initial,                //获取最后一个之外的数组
+        join:join,                      //将数组转为以x分隔的str
+        last:last,                      //获取数组的最后一个值
         pull:pull,
         reverse:reverse,
         every:every,
@@ -274,4 +274,4 @@ var aaa = function(){
         identity:identity,
     }
     
-}
+} ()
