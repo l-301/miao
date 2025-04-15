@@ -1,0 +1,142 @@
+<script>
+    function arrayToList1(array){
+        var a = 0
+        if(array.length == 0){
+            return null
+        }
+        if(array.length == 1){
+            return{val:array[0],next:null}
+        }
+        for(i = 0; i < array.length; i++){
+            var x = {val:array[i],next:null}
+            if(a == 0){
+                a = x
+                var y = a
+            }else{
+                a.next = x
+                a = a.next
+            }
+            
+        }
+        return y
+    }
+
+    function arrayToList2(array){
+        var helperNode = {
+            val:0,
+            next:null
+        }
+
+        var prevNode = helperNode
+
+        for(var i of array){
+            var node = {
+                val:i,
+                next:null
+            }
+            prevNode.next = node
+            prevNode = node
+        }
+        return helperNode.next
+    }
+
+    function arrayToList3(array){   //递归版本
+        if(array.length == 0){
+            return null
+        }
+
+        var node = {
+            val:array[0],
+            next:null
+        }
+
+        var restArray = array.slice(1)
+        var restList = arrayToList3(restArray)
+
+        node.next = restList
+        return node
+    }
+
+    var head = arrayToList3([1,2,3,4])
+
+    function listToArray(head){
+        var a = []
+        if(!head){
+            return a
+        }
+        while(head){
+            a.push(head.val)
+            head = head.next
+        }
+        return a
+    }
+
+    function listToArray2(head){    //递归硬写
+        if(!head){
+            return []
+        }
+        return[head.val,...listToArray2(head.next)]
+    }
+
+    function prepend(val,head){
+        var a = {val:val,next:head}
+        return a
+    }
+
+    function append(val,head){
+        var a = head
+        while(head){
+            if(head.next == null){
+                head.next = {
+                    val:val,
+                    next:null
+                }
+                break
+            }
+            head = head.next
+        }
+        return a
+    }
+
+    function abc1(array){    //又写了一遍递归的tolist
+        if(array.length == 0){
+            return null
+        }
+        var node = {
+            val:array[0],
+            next:null
+        }
+        var x = array.slice(1)
+        var a = abc1(x)
+
+        node.next = a
+        return node
+
+    }
+
+    function nth(head,idx){
+        var count = 1
+        while(head){
+            if(count == idx){
+                return head.val
+            }
+            head = head.next
+            count++
+        }
+        return null
+    }
+
+    function nth2(head,idx,count = 1,v = null){
+        if(!head){
+            return
+        }
+        if(idx == count){
+            v = head.val
+            return v
+        }
+        head = head.next
+        count++
+        return nth2(head,idx,count,v)
+        
+    }
+</script>

@@ -1,0 +1,63 @@
+<script>
+    function copy1(obj){
+        var x = {}
+        for(var i in obj){
+            var a = i
+            var b = obj[a]
+            x[a] = b
+        }
+        return x
+    }
+
+    function copy(x){
+        if(typeof x == 'object' && x != null){
+            if(Array.isArray(x)){
+                var a = []
+                for(i = 0; i < x.length; i++){
+                    a.push(x[i])
+                }
+                return a
+            }else{
+                var a = {}
+                for(var key in x){
+                    if(typeof x[key] == 'objeck'){
+                        a[key] = copy(x[key])
+                    }else{
+                        a[key] = x[key]
+                    }
+                }
+                return a
+            }
+        }else{
+            return x
+        }
+    }
+
+    function equal(a,b){
+        if(typeof a == 'object' && typeof b == 'object' && a !== null && b !== null){   //除了对象只要返回ab是否===
+            var counta = 0
+            var countb = 0
+            for(var key in a){
+                counta++
+            }
+            for(var key in b){
+                countb++
+            }
+            if(counta !== countb){  //确认数量
+                return false
+            }
+
+            for(var key in a){  //对比具体值
+                if(key in a && key in b &&!equal(a[key],b[key])){  //对象值为对象时，掉递归来判断
+                    return false                                   //防止对比时读值为undefined
+                }
+            }
+
+            return true
+        }else{
+            return a === b
+        }
+    }
+    var aaa = {a:1,b:2,c:{a:1,b:3}}
+    var bbb = {a:1,b:2,c:{a:1,b:2}}
+</script>

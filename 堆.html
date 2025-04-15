@@ -1,0 +1,135 @@
+<script>
+    class PriorityQueue {
+        constructor(){
+            this._item = []
+        }
+        swap(a,b){
+            var x = this._item[a]
+            this._item[a] = this._item[b]
+            this._item[b] = x
+        }
+        abc(idx){                   //和父元素对比,切换
+            while(idx > 0){
+                var pIdx = (idx - 1) >> 1
+                if(this._item[idx] > this._item[pIdx]){
+                    this.swap(idx,pIdx)
+                    idx = pIdx
+                }else{
+                    break
+                }
+            }
+        }
+        push(value){
+            this._item.push(value)
+            this.abc(this._item.length - 1)
+            return this._item
+        }
+        abc2(){
+            var x = 0
+            var a = 1
+            while(a < this._item.length){
+                a = (2 * x) + 1
+                var b = (2 * x) + 2
+                if((this._item[a] || -Infinity) < (this._item[b] || -Infinity)){
+                    if(this._item[x] < this._item[b]){
+                        this.swap(x,b)
+                        x = b
+                    }else{
+                        break
+                    }
+                }else{
+                    if(this._item[x] < this._item[a]){
+                        this.swap(x,a)
+                        x = a
+                    }else{
+                        break
+                    }
+                }
+            }
+        }
+        pop(){
+            if(this._item.length < 3){
+                return this._item.shift()
+            }
+            var result = this._item[0]
+            var last = this._item.pop()
+            this._item[0] = last
+            this.abc2()
+            return result
+        }
+    }
+    function swap(array,i,j){
+        var x = array[i]
+        array[i] = array[j]
+        array[j] = x
+    }
+    function abc2(array,idx){
+            var x = idx
+            var a = 1
+            while(a < array.length){
+                a = (2 * x) + 1
+                var b = (2 * x) + 2
+                if((array[a] || -Infinity) < (array[b] || -Infinity)){
+                    if(array[x] < (array[b] || -Infinity)){
+                        swap(array,x,b)
+                        x = b
+                    }else{
+                        break
+                    }
+                }else{
+                    if(array[x] < (array[a] || -Infinity)){
+                        swap(array,x,a)
+                        x = a
+                    }else{
+                        break
+                    }
+                }
+            }
+        }
+    function dui(array){
+        for(i = (array.length - 1) >> 1; i >= 0; i--){
+            abc2(array,i)
+        }
+        return array
+    }
+    function pop(array){
+        if(array.length < 3){
+            return array.shift()
+        }
+        var result = array[0]
+        var last = array.pop()
+        array[0] = last
+        abc2(array,0)
+        return result
+    }
+    function abc3(array,idx,x){
+        while(true){
+            var maxIdx = idx
+            var left = idx * 2 + 1
+            var right = idx * 2 + 2
+            if(left < x && array[left] > array[maxIdx]){
+                maxIdx = left
+            }
+            if(right < x && array[right] > array[maxIdx]){
+                maxIdx = right
+            }
+            if(maxIdx !== idx){
+                swap(array,maxIdx,idx)
+                idx = maxIdx
+            }else{
+                break
+            }
+        }
+    }
+    function pai(array){
+        array = dui(array)
+        var x = array.length - 1
+        for(i = x; i >=0; i--){
+            swap(array,0,i)
+            abc3(array,0,i)
+        }
+        return array
+        
+    }
+
+</script>

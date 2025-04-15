@@ -1,0 +1,62 @@
+<script>
+    var c = 0
+    function describe(description,func){
+        c++
+        console.log(' '.repeat(c - 1)+description)
+        func()
+        c--
+    }
+
+    describe('foo',() =>{
+        describe('bar',() =>{})
+        describe('bar',() =>{
+            describe('bar1',() =>{})
+            describe('bar1',() =>{})
+            describe('bar1',() =>{})
+        })
+        describe('bar',() =>{})
+    })
+
+    class MultiplicatorUnitFailure extends Error{}
+
+    function primitiveMultiply(a,b){
+        if(Math.random() > 0.5){
+            return a * b
+        }else{
+            throw new MultiplicatorUnitFailure('failed')
+        }
+    }
+
+    function multiply(a,b){
+        try{
+            var x = primitiveMultiply(a,b)
+        } catch(e) {
+            if(e instanceof MultiplicatorUnitFailure){
+                var x = multiply(a,b)
+            }else{
+                throw e
+            }
+        }
+        return x
+    }
+
+    var box = {
+        locked: true,
+        unlock: function(){ this.locked = false;},
+        lock: function(){this.locked = true;},
+        _content: [],
+        get content(){
+            if(this.locked) throw new Error("Locked !");
+            return this._content;
+        }
+    }
+
+    function withBoxUnlocked(func){
+        box.unlock()
+        try{
+            func()
+        }finally{
+            box.lock()
+        }
+    }
+</script>
