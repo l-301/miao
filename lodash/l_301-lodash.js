@@ -64,8 +64,10 @@ var l_301 = function(){
 
     function findLastIndex(array,predicate = identity,fromIndex = array.length - 1){
         for(var i = fromIndex; i >= 0; i--){
-            if(predicate(array[i],i,array)){
-                return i
+            if(typeof predicate == 'function'){
+                if(predicate(array[i],i,array)){
+                    return i
+                }
             }
         }
         return -1
@@ -76,7 +78,7 @@ var l_301 = function(){
         var x = []
         for(var i = 0; i < array.length; i++){
             if(typeof array[i] == 'object'){
-                for(var j = 0; j < array.length; j++){
+                for(var j = 0; j < array[i].length; j++){
                     x.push(array[i][j])
                 }
             }else{
@@ -90,7 +92,7 @@ var l_301 = function(){
     function flattenDeep(array,x = []){
         for(var i = 0; i < array.length; i++){
             if(typeof array[i] == 'object'){
-                flatten(array[i],x)
+                flattenDeep(array[i],x)
             }else{
                 x.push(array[i])
             }
@@ -103,7 +105,9 @@ var l_301 = function(){
         for(var i = 0; i < array.length; i++){
             if(typeof array[i] == 'object'){
                 if(d < depth){
-                    flatten(array[i],depth,x,d+1)
+                    flattenDepth(array[i],depth,x,d+1)
+                }else{
+                    x.push(array[i])
                 }
             }else{
                 x.push(array[i])
@@ -116,7 +120,7 @@ var l_301 = function(){
     function fromPairs(pairs){
         var obj = {}
         for(var i = 0; i < pairs.length ; i++){
-            obj[array[i][0]] = array[i][1]
+            obj[pairs[i][0]] = pairs[i][1]
         }
         return obj
     }
@@ -127,7 +131,7 @@ var l_301 = function(){
         var b = []
         for(var key in object){
             b.push(key)
-            b.push(objekt[key])
+            b.push(object[key])
             a.push(b)
             b = []
         }
@@ -160,6 +164,9 @@ var l_301 = function(){
         if(fromIndex < 0){
             fromIndex = Math.abs(fromIndex)
         }
+        if(fromIndex > array.length){
+            return -1
+        }
         for(var i = fromIndex; i >= 0; i--){
             if(array[i] == value){
                 return i
@@ -184,7 +191,7 @@ var l_301 = function(){
     function join(array,separator = ','){
         var str = ''
         for(var i = 0; i < array.length; i++){
-            str += array[i] + separator
+            str = str + array[i] + separator
         }
         return str.slice(0,str.length - 1)
     }
@@ -198,15 +205,15 @@ var l_301 = function(){
     }
 
 
-    function pull(array,values){
+    function pull(array,...arg){
         var obj = {}
-        for(var i = 0; i < values.length; i++){
-            obj[values[i]] = 1
+        for(var i of arg){
+            obj[i] = 1
         }
         var x = []
         for(var j = 0; j < array.length; j++){
-            if(!obj[array[i]]){
-                x.push(array[i])
+            if(!obj[array[j]]){
+                x.push(array[j])
             }
         }
         return array = x
