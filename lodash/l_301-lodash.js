@@ -1,6 +1,3 @@
-<script scr=''></script>
-
-
 var l_301 = function(){
     function compact(array) {       //去除数组中的null、0、""、undefined、 和NaN值
         var x = []
