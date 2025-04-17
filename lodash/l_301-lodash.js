@@ -54,8 +54,9 @@ var l_301 = function(){
 
 
     function findIndex(array,predicate = identity,fromIndex = 0){
+        predicate = iteratee(predicate)
         for(var i = fromIndex; i < array.length; i++){
-            if(predicate(array[i],i,array)){
+            if(predicate(array[i])){
                 return i
             }
         }
@@ -63,11 +64,10 @@ var l_301 = function(){
     }
 
     function findLastIndex(array,predicate = identity,fromIndex = array.length - 1){
+        predicate = iteratee(predicate)
         for(var i = fromIndex; i >= 0; i--){
-            if(typeof predicate == 'function'){
-                if(predicate(array[i],i,array)){
-                    return i
-                }
+            if(predicate(array[i])){
+                return i
             }
         }
         return -1
@@ -230,8 +230,9 @@ var l_301 = function(){
 
 
     function every(collection,predicate = identity){
+        predicate = iteratee(predicate)
         for(var i = 0; i < collection.length; i++){
-            if(!predicate(collection[i],i,collection)){
+            if(!predicate(collection[i])){
                 return false
             }
         }
@@ -240,18 +241,295 @@ var l_301 = function(){
 
 
     function some(collection,predicate = identity){
+        predicate = iteratee(predicate)
         for(var i = 0; i < collection; i++){
-            if(predicate(collecion[i],i,collection)){
+            if(predicate(collection[i])){
                 return true
             }
         }
         return false
     }
 
+
     function identity(value){
         return value
     }
     
+    
+    function countBy(collection,predicate = identity){
+        predicate = iteratee(predicate)
+        var x = {}
+        for(var key in collection){
+            var a = predicate(collection[key])
+            if(!x[a]){
+                x[a] = 1
+            }else{
+                x[a]++
+            }
+        }
+        return x
+    }
+
+
+    function groupBy(collection,predicate = identity){
+        predicate = iteratee(predicate)
+        var x = {}
+        var val = []
+        for(var key in collection){
+            var a = predicate(collection[key])
+            if(!x[a]){
+                val.push(collection[key])
+                x[a] = val
+                val = []
+            }else{
+                x[a].push(collection[key])
+            }
+        }
+        return x
+    }
+
+
+    function keyBy(collection,predicate = identity){
+        predicate = iteratee(predicate)
+        var x = {}
+        for(var key in collection){
+            var a = predicate(collection[key])
+            x[a] = collection[key]
+        }
+        return x
+    }
+    
+
+    function forEach(collection,predicate = identity){
+        for(var key in collection){
+            predicate(collection[key],key,collection)
+        }
+    }
+
+
+    function map(collection,predicate = identity){
+        var f = false
+        if(typeof predicate == 'function'){
+            f = true
+        }
+        predicate = iteratee(predicate)
+        var x = []
+        for(var key in collection){
+            if(f){
+                var a = predicate(Number(collection[key]),Number(key),collection)
+            }else{
+                var a = predicate(collection[key])
+            }
+            x.push(a)
+        }
+        return x
+    }
+
+
+    function filter(collection,predicate = identity){
+        predicate = iteratee(predicate)
+        var x = []
+        for(var key in collection){
+            if(predicate(collection[key])){
+                for(var k in collection[key]){
+                    x.push(collection[key][k])
+                    break
+                }
+            }
+        }
+        return x
+    }
+
+
+    function reduce(collection,predicate = identity,accumulator = 'false'){
+        if(accumulator !== 'false'){
+            var sum = accumulator
+        }else{
+            var sum = 0
+        }
+        for(var key in collection){
+            sum = predicate(sum,collection[key],key,collection)
+        }
+        return sum
+    }
+
+
+    function reduceRight(collection,predicate = identity,accumulator = 'false'){
+        if(accumulator !== 'false'){
+            var sum = accumulator
+        }else{
+            var sum = 0
+        }
+        for(var i = collection.length - 1; i >= 0; i--){
+            sum = predicate(sum,collection[i],i,collection)
+        }
+        return sum
+    }
+
+
+    function size(collection){
+        var a = collection.length
+        var count = 0
+        if(!a){
+            for(var key in collection){
+                count++
+            }
+            return count
+        }
+        return a
+    }
+
+
+    function sortBy(collection,predicate = identity){
+        var coll1 = collection.slice()
+        if(predicate.length == 1){
+            sort(coll1,predicate[0])
+        }else{
+            var a = iteratee(predicate[0])
+            var b = iteratee(predicate[1])
+            sort(coll1,a)
+            sort(coll1,b)
+        }
+        var x = []
+        var y = []
+        for(var i = 0; i < coll1.length; i++){
+            for(var key in coll1[i]){
+                y.push(coll1[i][key])
+            }
+            x.push(y)
+            y = []
+        }
+        return x
+
+    }
+
+
+    function sort(collection,predicate){
+        var min = Infinity
+        var idx = 0
+        for(var i = 0; i < collection.length; i++){
+            for(var j = i; j < collection.length; j++){
+                var a = predicate(collection[j])
+                if(typeof a == 'string'){
+                    a = a[0].charCodeAt()
+                }
+                if(a < min){
+                    min = a
+                    idx = j
+                }
+            }
+            var t = collection[i]
+            collection[i] = collection[idx]
+            collection[idx] = t
+            idx = 0
+            min = Infinity
+        }
+    }
+
+
+    function sample(collection){
+        var l = size(collection)
+        var a = Math.floor(Math.random() * 10)
+        l = 10 / l
+        a = Math.floor(a / l)
+        var count = 0 
+        for(var i in collection){
+            if(count == a){
+                return collection[i]
+            }
+            count++
+        }
+    } 
+    
+
+    function property(path){
+        return function(obj){
+            return get(obj,path)
+        }
+    }
+
+
+    function get(obj,path){
+        var paths = toPath(path)
+        for(var val of paths){
+            if(!obj){
+                break
+            }
+            obj = obj[val]
+        }
+        return obj
+
+    }
+
+    
+    function toPath(str){
+        return str.split('.')
+    }
+
+
+    function matchesProperty([path,srcValue]){
+        return function(obj){
+            return get(obj,path) == srcValue
+        }
+    }
+
+
+    function matches(source){
+        return function(obj){
+            for(var key in source){
+                if(typeof source[key] == 'object'){
+                    if(isMatch(source[key],obj[key]) == false){
+                        return false
+                    }
+                }
+                if(obj[key] !== source[key]){
+                    return false
+                }
+            }
+            return true
+        }
+    }
+
+
+    function isMatch(source,obj){
+        for(var key in source){
+            if(obj[key] !== source[key]){
+                return false
+            }
+        }
+        return true
+    }
+
+    /*property,matchesProperty等函数闭包，可以用他进一步的get，isMatch绑定一个参数来实现
+        function property(path){
+            return get.bind(null,path)
+        }
+
+        function matches(source){
+            return isMatch.bing(null,source)
+        }
+
+        function bind(func,thisArg,...fixedArgs){
+            return function(...args){
+     
+            }
+        }
+    */ 
+
+
+    function iteratee(predicate){
+        if(typeof predicate == 'function'){
+            return predicate
+        }
+        if(typeof predicate == 'string'){
+            predicate = property(predicate)
+        }else if(Array.isArray(predicate)){
+            predicate = matchesProperty(predicate)
+        }else if(typeof predicate == 'object'){
+            predicate = matches(predicate)
+        }
+        return predicate
+    }
 
     return {
         comapct: compact,               //去除数组中的null、0、""、undefined、 和NaN值
@@ -276,6 +554,26 @@ var l_301 = function(){
         every:every,
         some:some,
         identity:identity,
+        countBy:countBy,
+        groupBy:groupBy,
+        keyBy:keyBy,
+        forEach:forEach,
+        map:map,
+        filter:filter,
+        reduce:reduce,
+        reduceRight:reduceRight,
+        size:size,
+        sortBy:sortBy,
+        sort:sort,
+        sample:sample,
+        property:property,               //返回一个函数，函数得到一个对象的属性值
+        get:get,                         //得到一个对象的嵌套属性值
+        toPath:toPath,                   //把字符串转路径换为数组
+        matchesProperty:matchesProperty, //返回一个函数，判断obj中是否有某值
+        matches:matches,                 //返回一个函数，判断obj中是否有多个值相同的项
+        isMatch:isMatch,                 //判断嵌套层次的obj的值是否相同
+        //bind:bind,                       //实现绑定的跳过参数
+        iteratee:iteratee,               //用来识别传入的值调用相关函数
     }
     
 } ()
