@@ -304,6 +304,7 @@ var l_301 = function(){
         for(var key in collection){
             predicate(collection[key],key,collection)
         }
+        return collection
     }
 
 
@@ -316,7 +317,7 @@ var l_301 = function(){
         var x = []
         for(var key in collection){
             if(f){
-                var a = predicate(Number(collection[key]),Number(key),collection)
+                var a = predicate(collection[key],key,collection)
             }else{
                 var a = predicate(collection[key])
             }
@@ -331,10 +332,7 @@ var l_301 = function(){
         var x = []
         for(var key in collection){
             if(predicate(collection[key])){
-                for(var k in collection[key]){
-                    x.push(collection[key][k])
-                    break
-                }
+                x.push(collection[key])
             }
         }
         return x
@@ -390,7 +388,7 @@ var l_301 = function(){
             sort(coll1,a)
             sort(coll1,b)
         }
-        var x = []
+        /*var x = []
         var y = []
         for(var i = 0; i < coll1.length; i++){
             for(var key in coll1[i]){
@@ -398,8 +396,8 @@ var l_301 = function(){
             }
             x.push(y)
             y = []
-        }
-        return x
+        }*/
+        return coll1
 
     }
 
@@ -581,10 +579,10 @@ var l_301 = function(){
 
     function maxBy(array,predicate = identity){
         predicate = iteratee(predicate)
-        var max = -Infinity
+        var max = array[0]
         for(var i = 0; i < array.length; i++){
-            if(predicate(array[i]) > max){
-                max = predicate(array[i])
+            if(predicate(array[i]) > predicate(max)){
+                max = array[i]
             }
         }
         return max
@@ -593,10 +591,10 @@ var l_301 = function(){
 
     function minBy(array,predicate = identity){
         predicate = iteratee(predicate)
-        var min = Infinity
+        var min = array[0]
         for(var i = 0; i < array.length; i++){
-            if(predicate(array[i]) < min){
-                min = predicate(array[i])
+            if(predicate(array[i]) < predicate(min)){
+                min = array[i]
             }
         }
         return min
@@ -696,11 +694,15 @@ var l_301 = function(){
         if(typeof path == 'string'){
             var path = toPath(path)
         }
+        var count = 0
         for(var val of path){
             if(!object || typeof object !== 'object'){
                 return false
             }
             object = object[val]
+        }
+        if(count == 0){
+            return false
         }
         return true
     }
@@ -782,7 +784,7 @@ var l_301 = function(){
             for(var key1 in value){
                 counta++
             }
-            for(var key2 in value){
+            for(var key2 in other){
                 countb++
             }
             if(counta !== countb){
