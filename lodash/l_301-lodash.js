@@ -531,6 +531,572 @@ var l_301 = function(){
         return predicate
     }
 
+
+    function isUndefined(value){
+        return value === undefined
+    }
+
+
+    function isNull(value){
+        return value === null
+    }
+
+
+    function isNil(value){
+        if(value === null || value === undefined){
+            return true
+        }else{
+            return false
+        }
+    }
+
+
+    function max(array){
+        if(array.length == 0){
+            return
+        }
+        var max = array[0]
+        for(var i = 1; i < array.length; i++){
+            if(array[i] > max){
+                max = array[i]
+            }
+        }
+        return max
+    }
+
+
+    function min(array){
+        if(array.length == 0){
+            return
+        }
+        var min = array[0]
+        for(var i = 1; i < array.length; i++){
+            if(array[i] < min){
+                min = array[i]
+            }
+        }
+        return min
+    }
+
+
+    function maxBy(array,predicate = identity){
+        predicate = iteratee(predicate)
+        var max = -Infinity
+        for(var i = 0; i < array.length; i++){
+            if(predicate(array[i]) > max){
+                max = predicate(array[i])
+            }
+        }
+        return max
+    }
+
+
+    function minBy(array,predicate = identity){
+        predicate = iteratee(predicate)
+        var min = Infinity
+        for(var i = 0; i < array.length; i++){
+            if(predicate(array[i]) < min){
+                min = predicate(array[i])
+            }
+        }
+        return min
+    }
+
+
+    function round(number,precision = 0){
+        if(precision >= 0){
+            number += ''
+            number = number.split('.')
+            var a = Number(number[1][precision])
+            if(a >= 5){
+                if(precision == 0){
+                    return Number(number[0]) + 1
+                }else{
+                    var b = Number(number[1][precision - 1])
+                    b++
+                    number[1] = number[1].slice(0,precision - 1)
+                    number[1] += '' + b 
+                    return Number(number[0] + '.' + number[1])
+                }
+            }else{
+                number[1] = number[1].slice(0,precision)
+                return Number(number[0] + '.' + number[1])
+            }
+        }else{
+            number += ''
+            precision = Math.abs(precision)
+            var l = number.length - precision
+            l = Math.pow(10,l)
+            var a = Number(number[precision])
+            if(a >= 5){
+                var b = Number(number[precision - 1])
+                b++
+                number = number.slice(0,precision - 1)
+                number = Number(number + b + '')
+                return number * l
+            }else{
+                number = Number(number.slice(0,precision))
+                return number * l
+            }
+        }
+    }
+
+
+    function sumBy(array,predicate = identity){
+        predicate = iteratee(predicate)
+        var sum = 0
+        for(var key in array){
+            sum += predicate(array[key])
+        }
+        return sum
+    }
+
+
+    function flatMap(collection,predicate = identity){
+        var x = []
+        for(var key in collection){
+            var a = predicate(collection[key])
+            for(var i = 0; i < a.length; i++){
+                x.push(a[i])
+            }
+        }
+        return x
+    }
+
+
+    function flatMapDepth(collection,predicate = identity,depth = 1){
+        var x = []
+        for(var key in collection){
+            var a = predicate(collection[key])
+            a = deep(a)
+            if(depth == 2){
+                x.push(a)
+            }else if(depth < 2){
+                for(var i = 0; i < a.length; i++){
+                    x.push(a[i])
+                }
+            }else{
+                for(var j = 2; j < depth; j++){
+                    a = [a]
+                }
+                x.push(a)
+            }
+        }
+        return x
+        function deep(array){
+            if(typeof array[0] == 'object'){
+                array = deep(array[0])
+            }
+            return array
+        }
+    }
+
+
+    function has(object,path){
+        if(typeof path == 'string'){
+            var path = toPath(path)
+        }
+        for(var val of path){
+            if(!object || typeof object !== 'object'){
+                return false
+            }
+            object = object[val]
+        }
+        return true
+    }
+
+
+    function mapKeys(object,predicate = identity){
+        var x = {}
+        for(var key in object){
+            var a = predicate(object[key],key,object)
+            x[a] = object[key]
+        }
+        return x
+    }
+
+
+    function mapValues(object,predicate = identity){
+        predicate = iteratee(predicate)
+        var x = {}
+        for(var key in object){
+            var a = predicate(object[key])
+            x[key] = a
+        }
+        return x
+    }
+    
+
+    function range(start = 0,end = false,step = 1){
+        var x  = []
+        if(!end){
+            end = start
+            start = 0
+        }
+        if(step == 0){
+            var j = start
+            for(var i = start;i < end; i++){
+                x.push(j)
+            }
+            return x
+        }
+        if(end >= 0){
+            for(var i = start; i < end; i += step){
+                x.push(i)
+            }
+        }else{
+            if(step > 0){
+                step = Number('-' + step)
+            }
+            for(var i = start; i > end; i += step){
+                x.push(i)
+            }
+        }
+        return x
+    }
+    
+    
+    /*function stringifyJSON(){
+
+    }*/
+
+
+    function concat(array,...value){
+        if(value.length == 0){
+            return array
+        }
+        for(var i = 0; i < value.length; i++){
+            if(typeof value[i] == 'object'){
+                value[i] = value[i][0]
+            }
+            array.push(value[i])
+        }
+        return array
+    }
+
+
+    function isEqual(value,other){
+        if(typeof value == 'object' && typeof other == 'object' && value !== null && other !== null){
+            var counta = 0
+            var countb = 0
+            for(var key1 in value){
+                counta++
+            }
+            for(var key2 in value){
+                countb++
+            }
+            if(counta !== countb){
+                return false
+            }
+            for(var key in value){
+                if(key in value && key in other && !l_301.isEqual(value[key],other[key])){
+                    return false
+                }
+            }
+            return true
+        }else{
+            return value === other
+        }
+    }
+
+
+    function repeat(string = '',n = 1){
+        if(n == 0){
+            return ''
+        }
+        var a = ''
+        for(var i = 0; i < n; i++){
+            a += string
+        }
+        return string = a
+    }
+
+
+    function padStart(string = '',length = 0, chars = ' '){
+        var l = length - string.length
+        var x = ''
+        for(var i = 0; i < l; i += chars.length){
+            x += chars
+        }
+        x = x.slice(0,l)
+
+        return x + string
+    }
+
+
+    function padEnd(string = '', length = 0, chars = ' '){
+        var l = length - string.length
+        var x = ''
+        for(var i = 0; i < l; i += chars.length){
+            x += chars
+        }
+        x = x.slice(0,l)
+
+        return string + x
+    }
+
+
+    function pad(string = '', length = 0, chars = ' '){
+        var l = length - string.length
+        var rl = l >> 1
+        var ll = l - rl
+        var xr = ''
+        var xl = ''
+        for(var i = 0; i < l; i += chars.length){
+            xr += chars
+            xl += chars
+        }
+        xr = xr.slice(0,rl)
+        xl = xl.slice(0,ll)
+        return xr + string + xl
+    }
+
+
+    function keys(object){
+        var x = []
+        for(var key in object){
+            x.push(key)
+        }
+        return x
+    }
+
+
+    function values(object){
+        var x = []
+        for(var key in object){
+            x.push(object[key])
+        }
+        return x
+    }
+
+
+    /*function random(lowre = 0,upper = 1,floating){
+        
+    }*/
+
+
+    function ceil(number,precision = 0){
+        if(precision >= 0){
+            number += ''
+            number = number.split('.')
+            var a = number[1].slice(precision)
+            number[1] = number[1].slice(0,precision)
+            var up = false
+            for(var i = 0; i < a.length; i++){
+                if(a[i] !== '0'){
+                    up = true
+                    break
+                }
+            }
+            if(up){
+                if(number[1].length == 0){
+                    return Number(number[0]) + 1
+                }
+                var b = Number(number[1][precision - 1])
+                b++
+                number[1] = number[1].slice(0,precision - 1)
+                number[1] += '' + b 
+                return Number(number[0] + '.' + number[1])
+            }else{
+                number[1] = number[1].slice(0,precision)
+                return Number(number[0] + '.' + number[1])
+            }
+        }else{
+            number += ''
+            precision = Math.abs(precision)
+            var l = number.length - precision
+            l = Math.pow(10,l)
+            var a = number.slice(precision)
+            number = number.slice(0,precision)
+            var up = false
+            for(var i = 0; i < a.length; i++){
+                if(a[i] !== '0'){
+                    up = true
+                    break
+                }
+            }
+            if(up){
+                var b = Number(number[precision - 1])
+                b++
+                number = number.slice(0,precision - 1)
+                number = Number(number + b + '')
+                return number * l
+            }else{
+                number = Number(number.slice(0,precision))
+                return number * l
+            }
+        }
+    }
+
+
+    function floor(number,precision = 0){
+        if(precision >= 0){
+            number += ''
+            number = number.split('.')
+            number[1] = number[1].slice(0,precision)
+            return Number(number[0] + '.' + number[1])
+        }else{
+            number += ''
+            precision = Math.abs(precision)
+            var l = number.length - precision
+            l = Math.pow(10,l)
+            number = number.slice(0,precision)
+            number = Number(number.slice(0,precision))
+            return number * l
+        }
+    }
+
+
+    function cloneDeep(value){
+        if(typeof value == 'object' && value !== null){
+            if(Array.isArray(value)){
+                var x = []
+                for(var i = 0; i < value.length; i++){
+                    if(typeof value[i] == 'object'){
+                        x.push(l_301.cloneDeep(value[i]))
+                    }else{
+                        x.push(value[i])
+                    }
+                }
+                return x
+            }else{
+                var x = {}
+                for(var key in value){
+                    if(typeof value[key] == 'object'){
+                        x[key] = l_301.cloneDeep(value[key])
+                    }else{
+                        x[key] = value[key]
+                    }
+                }
+                return x
+            }
+        }else{
+            return value
+        }
+    }
+
+
+    function trim(string = '',chars = ' '){
+        var x = ''
+        var get = false
+        for(var i = 0; i < string.length; i++){
+            if(chars.length == 1){
+                if(string[i] !== chars){
+                    x += string[i]
+                }
+            }else{
+                for(var j = 0; j < chars.length; j++){
+                    if(string[i] == chars[j]){
+                        get = true
+                    }
+                }
+                if(!get){
+                    x += string[i]
+                }
+                get = false
+            }
+        }
+        return string = x
+    }
+
+
+    function trimStart(string = '',chars = ' '){
+        var x = ''
+        var l = string.length >> 1
+        var get = false
+        for(var i = 0; i < string.length; i++){
+            if(chars.length == 1){
+                if(string[i] !== chars || i >= l){
+                    x += string[i]
+                }
+            }else{
+                for(var j = 0; j < chars.length; j++){
+                    if(string[i] == chars[j] && i < l){
+                        get = true
+                    }
+                }
+                if(!get){
+                    x += string[i]
+                }
+                get = false
+            }
+        }
+        return string = x
+    }
+
+
+    function trimEnd(string = '', chars = ' '){
+        var x = ''
+        var l = string.length >> 1
+        var get = false
+        for(var i = 0; i < string.length; i++){
+            if(chars.length == 1){
+                if(string[i] !== chars || i < l){
+                    x += string[i]
+                }
+            }else{
+                for(var j = 0; j < chars.length; j++){
+                    if(string[i] == chars[j] && i >= l){
+                        get = true
+                    }
+                }
+                if(!get){
+                    x += string[i]
+                }
+                get = false
+            }
+        }
+        return string = x
+    }
+
+
+    function assign(object,...source){
+        for(var i = 0; i < source.length; i++){
+            for(var key in source[i]){
+                object[key] = source[i][key]
+            }
+        }
+        return object
+    }
+
+
+    function merge(object,...source){
+        for(var i = 0; i < source.length; i++){
+            for(var key in source[i]){
+                if(!object[key]){
+                    object[key] = source[i][key]
+                }else{
+                    for(var j = 0; j < object[key].length; j++){
+                        l_301.merge(object[key][j],source[i][key][j])
+                    }
+                }
+            }
+        }
+        return object
+    }
+
+
+    function flip(func){
+        return function(...args){
+            var x = []
+            for(var i = args.length - 1; i >= 0; i--){
+                x.push(args[i])
+            }
+            return func(x)
+        }
+    }
+
+
+    function negate(func){
+        return function(n){
+            if(func(n)){
+                return false
+            }else{
+                return true
+            }
+        }
+    }
+
     return {
         comapct: compact,               //去除数组中的null、0、""、undefined、 和NaN值
         chunk:chunk,                    //给数组分组
@@ -549,31 +1115,68 @@ var l_301 = function(){
         initial:initial,                //获取最后一个之外的数组
         join:join,                      //将数组转为以x分隔的str
         last:last,                      //获取数组的最后一个值
-        pull:pull,
-        reverse:reverse,
-        every:every,
-        some:some,
-        identity:identity,
-        countBy:countBy,
-        groupBy:groupBy,
-        keyBy:keyBy,
-        forEach:forEach,
-        map:map,
-        filter:filter,
-        reduce:reduce,
-        reduceRight:reduceRight,
-        size:size,
-        sortBy:sortBy,
-        sort:sort,
-        sample:sample,
-        property:property,               //返回一个函数，函数得到一个对象的属性值
-        get:get,                         //得到一个对象的嵌套属性值
-        toPath:toPath,                   //把字符串转路径换为数组
-        matchesProperty:matchesProperty, //返回一个函数，判断obj中是否有某值
-        matches:matches,                 //返回一个函数，判断obj中是否有多个值相同的项
-        isMatch:isMatch,                 //判断嵌套层次的obj的值是否相同
-        //bind:bind,                       //实现绑定的跳过参数
-        iteratee:iteratee,               //用来识别传入的值调用相关函数
+        pull:pull,                      //删除数组中和给定x相同的值
+        reverse:reverse,                //反转数组
+        every:every,                    //全真返回真
+        some:some,                      //全假返回假
+        identity:identity,              //返回其本身
+        countBy:countBy,                //对集合进行新的映射
+        groupBy:groupBy,                //对集合进行新的映射，val为数组存储原值
+        keyBy:keyBy,                    //对集合进行新的映射，val为集合完整项
+        forEach:forEach,                //遍历集合
+        map:map,                        //遍历映射集合
+        filter:filter,                  //遍历筛选集合
+        reduce:reduce,                  //遍历聚集集合
+        reduceRight:reduceRight,        //反向遍历聚集集合
+        size:size,                      //返回数组长度
+        sortBy:sortBy,                  //排序
+        sort:sort,                      //选择排序
+        sample:sample,                  //返回随机元素
+        property:property,              //返回一个函数，函数得到一个对象的属性值
+        get:get,                        //得到一个对象的嵌套属性值
+        toPath:toPath,                  //把字符串转路径换为数组
+        matchesProperty:matchesProperty,//返回一个函数，判断obj中是否有某值
+        matches:matches,                //返回一个函数，判断obj中是否有多个值相同的项
+        isMatch:isMatch,                //判断嵌套层次的obj的值是否相同
+        //bind:bind,                      //实现绑定的跳过参数
+        iteratee:iteratee,              //用来识别传入的值调用相关函数
+        isUndefined:isUndefined,        //判定是否为undefined
+        isNull:isNull,                  //判断是否为null
+        isNil,isNil,                    //判断是否为unde/null
+        max:max,                        //返回数组最大值
+        min:min,                        //返回数组最小值
+        maxBy:maxBy,                    //返回相关最大值
+        minBy:minBy,                    //返回相关最小值
+        round:round,                    //4舍5入
+        sumBy:sumBy,                    //按情况求和
+        flatMap:flatMap,
+        flatMapDepth:flatMapDepth,
+        has:has,
+        mapKeys:mapKeys,
+        mapValues:mapValues,
+        range:range,
+        //stringifyJSON:stringifyJSON,
+        concat:concat,
+        isEqual:isEqual,
+        repeat:repeat,
+        padStart:padStart,
+        padEnd:padEnd,
+        pad:pad,
+        keys:keys,
+        values:values,
+        //random,random,
+        ceil:ceil,
+        floor:floor,
+        cloneDeep:cloneDeep,
+        trim:trim,
+        trimStart:trimStart,
+        trimEnd:trimEnd,
+        assign:assign,
+        merge:merge,
+        flip:flip,
+        negate:negate,
     }
     
+
+
 } ()
